@@ -1,6 +1,6 @@
 # Git and GitHub Workshop Guide
 
-Find a partner and give each other either `Person A` or `Person B` and follow direction for your letter. Feel free to help your partner as well, it's the way to best learn.
+Find a partner and give each other either `Person A` or `Person B` and follow direction for your letter. Help your partner as well, it's the way to best learn.
 
 * Note you don't need to know any programming to use git, so don't be freaked out
 * Feel free to run any of the code or deviate from guide a little.
@@ -8,8 +8,9 @@ Find a partner and give each other either `Person A` or `Person B` and follow di
 	1. Its good practice to type and know the commands
 	2. sometimes the `"` and `'` in windows can be different then linux and then your commands don't work
 	3. PLEASE feel free to copy and paste the code into files though
+* You can use any text editor, notepad works well on Windows for editing files
 
-1. [**A** and **B**] Create a new git repo and push a initital commit to GitHub
+1. [**Person A** and **Person B**] Create a new git repo and push a initital commit to GitHub
 	1. Make a new folder on your local computer
 	2. Open that folder inside your terminal
 	3. Run `git init` to inititalize this folder as a git repo
@@ -28,20 +29,31 @@ Find a partner and give each other either `Person A` or `Person B` and follow di
 		- The `-m` stands for *message* and the first
 		- The first message is your git commit summary
 		- The second message is **optional** and where you would add more details about your message
+		- If you run into an error you will need to set your git email and username locally
+			- `git config --global user.email "yourGitHubEmail@wisc.edu"`
+			- `git config --global user.name "Your GitHub UserName"`
 	9. To see the commit you made run `git log`
-2. [**B**] We are going to use `Person A` repo so you can discard this folder if you want and help `A` with next step
-3. [**A**] Go to GitHub and create a new repo
+2. [**Person B**] We are going to use `Person A` repo so you can discard this folder if you want and help `A` with next step
+3. [**Person A**] Go to GitHub and create a new repo
 	1. Give it any name you want
 	2. Make it public
 	3. Don't worry about a README, .gitignore, or license
 	4. We need to tell our current repo on our local computer were we want to push our changes to with
-	5. We then can push our changes up to GitHub with
+	5. We then can push our changes up to GitHub with the link to the repo
+		- `git remote add origin https://github.com/YourUserName/NameOfRepo.git`
+		- `git push -u origin master`
 	6. Go to GitHub and refresh page and see everything is there from your commit
 	7. Now to allow `B` to push changes you need set them a `Collaborator` on GitHub
-4. [**B**]
-	1. We need to clone a repo `git clone <THEIR_REPO_URL>`
-	2. Open the repo folder in your terminal and run `git log`
-	3. Make a new file called `main.h` and add this to it
+		- 1. ![Where Settings is](GitHub_Workshop_Image_1.png)
+		- 2. ![Where Collaborator is](GitHub_Workshop_Image_2.png)
+		- 3. Add the usernames of partner
+4. [**Person B**]
+	1. You will need to check email and accept invite to private repo
+	2. We need to clone a repo `git clone <THEIR_REPO_URL>`
+		- ![Where Clone is](GitHub_Workshop_Image_3.png)
+	3. Open the repo folder (`cd` into it) in your terminal and run `git log`
+		- You should see the commit message
+	4. Make a **new** file in the repo folder called `main.h` and add this to it:
 	```
 	#ifndef GIT_WORKSHOP_MAIN_H
 	#define GIT_WORKSHOP_MAIN_H
@@ -50,7 +62,7 @@ Find a partner and give each other either `Person A` or `Person B` and follow di
 
 	#endif
 	```
-	4. Also change `main.c`
+	5. Also change `main.c`
 	```
 	#include <stdio.h>
 	#include "main.h"
@@ -63,36 +75,76 @@ Find a partner and give each other either `Person A` or `Person B` and follow di
 		}
 	}
 	```
-	5. Add the files to be staged for committing with `git add -A`
+	6. Add the files to be staged for committing with `git add -A`
 		- The `-A` says to add all files to be staged
 		- Has to be a captial "A"
-	6. To commit run `git commit -m "I Like Pi"`
-	7. If `Person A` did not set you as a "collaborator" on GitHub make sure you do that first
-	8. To push your changes run `git push` and use your GitHub name and password
-5. [**A**] We are going to get the new changes
+	7. To commit run `git commit -m "I Like Pi"`
+	8. If `Person A` did not set you as a "collaborator" on GitHub make sure you do that first
+	9. To push your changes run `git push` and use your GitHub name and password
+5. [**Person A**] We are going to get the new changes
 	1. To pull the changes from `Person B` run `git pull`
 	2. Run `git log` to see the changes
 	3. Add a new subfolder called `memes`
 		- You can run `mkdir memes`
 	4. Find and save a jpeg or png of a meme in this folder
+		- Need help? Here is a [link to help](https://www.google.com/search?rlz=1C1CHWA_enUS611US611&biw=946&bih=1109&tbm=isch&sa=1&q=most+popular+memes&oq=most+po&gs_l=psy-ab.3.0.0i67k1j0l3.17507.18194.0.19218.7.7.0.0.0.0.192.844.3j4.7.0....0...1.1.64.psy-ab..0.7.842....0.RmnvWe6UAi4)
 	5. Add the folder to be commited `git add memes/`
+		- If you are in the folder you can just do `git add ./` or even `git add -A`
 	6. Make your commit `git commit -m "memes for days"`
 	7. Make a push with `git push`
-6. [**B**] Do **NOT** pull the new meme folder commit... not yet
+6. [**Person B**] **DO NOT PULL THE NEW MEME FOLDER COMMIT**... not yet
 	1. Make a new *branch* called "pi" with `git branch pi`
 	2. If you run `git branch` you will see the branches you have
 	3. To *checkout* the new pi branch run `git checkout pi`
 	4. Make a new subfolder called `basic`
-	5. Find a picture of a pumpkin spice latte and add it to this folder
-	6. Now change the print statment in `main.c` from `"I Like Pi\n"` to `I LOVE Pi\n"`
+		- `mkdir basic`
+	5. Find a picture of a [pumpkin spice latte](https://i.pinimg.com/originals/ca/b8/24/cab824eeb532d8ea5746d30e7bda20ce.jpg) and add it to this folder
+	6. Now change the two lines in `main.c`
+		- FROM 
+		```
+		if (PI > 3) {
+			"I Like Pi\n"
+		```
+		- TO 
+		```
+		if (PI > 2) {
+			"I LOVE PSL\n"
+		```
 	7. Add all these changes with `git add -A`
+		- Run `git status` to make sure you have a new file for the image and a modified `main.c` file
 	8. Now make the commit `git commit -m "super basic"`
-	9. Push changes with `git push`
-7. [**A**] Pull in the new branch from `Person B` `git pull`
-8. [**B**] Switch back to the Master branch `git checkout master`
+	9. Push changes with `git push --set-upstream origin pi`
+		- This is telling it to push the `pi` branch to our `origin` remote server which is the GitHub repo
+7. [**Person A**] Pull in the new branch from `Person B` running `git pull`
+	1. Make sure you are **out** of the meme folder (run `cd ..`) and run `git branch` to see the other branch
+8. [**Person B**] Switch back to the Master branch `git checkout master`
 	1. Pull down the memes changes from before with `git pull`
-9. [**A** and **B**] Look at your file explore and the `main.c` file
+	2. You can also examine the branches on GitHub
+		- ![Where Branch is](GitHub_Workshop_Image_4.png)
+9. [**Person A** and **Person B**] Look at your file explore and the `main.c` file
 	- Try switching between branches and note how it changes your folders and files for you
 	- `git checkout pi` and `git checkout master`
-10. [**A**] Time to merge to branch into master`
-	
+	- You should see that the folder for `memes` and `basic` switch automatically for you. Also `main.c` switches
+10. [**Person A**] Time to merge to branch into master!
+	- Make sure you are at the top of your git directory
+	- Switch to the master branch if you have are not `git checkout master`
+	- Now time to merge with `git merge pi`
+		- If a text editor comes ou you can just exit out
+			- If Vim or Vi run `:q`
+			- If Nano run `Ctrl + x`
+	- ![Merge Conflict](GitHub_Workshop_Image_5.png)
+	- Don't panic, we can do this!
+	- Open up `main.c` in any text editor and you will probably see this:
+		- ![Merge Conflict](GitHub_Workshop_Image_6.png)
+	- So this is **SUPER easy**, just delete the lines you don't want and keep the ones you want
+		- The whole point of a merge conflict to let you handle cases were git can'tbm
+	- Your new code might look like this
+		- ![Merge Conflict Fixed](GitHub_Workshop_Image_7.png)
+	- Now you fixed it just add and commit
+		- `git add main.c`
+		- `git commit -m "I merged the conflict`
+		- `git push`
+
+## YOU DID IT
+
+That wasn't that hard was it now. Feel free to play around and make random commits and test out other features while you have time to mess around and get your hands dirty.
