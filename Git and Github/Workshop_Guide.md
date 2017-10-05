@@ -1,18 +1,18 @@
 # Git and GitHub Workshop Guide
 
-Find a partner and give each other either `Person A` or `Person B` and follow direction for your letter. Help your partner as well, it's the way to best learn.
+Find a partner and assign one of you as `Person A` and the other as `Person B`. Follow the directions for your letter throughout the guide. Help your partner as well, it's the way to best learn.
 
 * Note you don't need to know any programming to use git, so don't be freaked out
 * Feel free to run any of the code or deviate from guide a little.
 * **WARNING** DO NOT copy and paste the git command
 	1. Its good practice to type and know the commands
-	2. sometimes the `"` and `'` in windows can be different then linux and then your commands don't work
+	2. sometimes the `"` and `'` in windows can be different then linux, so your commands don't work
 	3. PLEASE feel free to copy and paste the code into files though
 * You can use any text editor, notepad works well on Windows for editing files
 
-1. [**Person A** and **Person B**] Create a new git repo and push a initital commit to GitHub
+1. [**Person A** and **Person B**] Create a new git repo and push a initial commit to GitHub
 	1. Make a new folder on your local computer
-	2. Open that folder inside your terminal
+	2. Open the folder inside your terminal (cd <foldername>)
 	3. Run `git init` to inititalize this folder as a git repo
 	4. Create a file called `main.c`
 	```
@@ -23,18 +23,18 @@ Find a partner and give each other either `Person A` or `Person B` and follow di
 	}
 	```
 	5. To see the untracked file run `git status`
-	6. Now to add file run `git add main.c`
+	6. Now to add the file to the new commit, run `git add main.c`
 	7. Run `git status` again to see your file ready for committing by being in green
-	8. To make the commit run `git commit -m "init commit" -m "git is easy"`
-		- The `-m` stands for *message* and the first
+	8. To make the commit, run `git commit -m "init commit" -m "git is easy"`
+		- The `-m` stands for *message*
 		- The first message is your git commit summary
-		- The second message is **optional** and where you would add more details about your message
+		- The second message is **optional** and is where you would add more details about your message
 		- If you run into an error you will need to set your git email and username locally
 			- `git config --global user.email "yourGitHubEmail@wisc.edu"`
 			- `git config --global user.name "Your GitHub UserName"`
-	9. To see the commit you made run `git log`
+	9. To see the commit you made, run `git log`
 2. [**Person B**] We are going to use `Person A` repo so you can discard this folder if you want and help `A` with next step
-3. [**Person A**] Go to GitHub and create a new repo
+3. [**Person A**] Go to GitHub (www.github.com) and create a new repo
 	1. Give it any name you want
 	2. Make it public
 	3. Don't worry about a README, .gitignore, or license
@@ -43,7 +43,7 @@ Find a partner and give each other either `Person A` or `Person B` and follow di
 		- `git remote add origin https://github.com/YourUserName/NameOfRepo.git`
 		- `git push -u origin master`
 	6. Go to GitHub and refresh page and see everything is there from your commit
-	7. Now to allow `B` to push changes you need set them a `Collaborator` on GitHub
+	7. Now to allow `Person B` to push changes you need set them a `Collaborator` on GitHub
 		- 1. ![Where Settings is](GitHub_Workshop_Image_1.png)
 		- 2. ![Where Collaborator is](GitHub_Workshop_Image_2.png)
 		- 3. Add the usernames of partner
@@ -77,7 +77,8 @@ Find a partner and give each other either `Person A` or `Person B` and follow di
 	```
 	6. Add the files to be staged for committing with `git add -A`
 		- The `-A` says to add all files to be staged
-		- Has to be a captial "A"
+		- This can also be done with 'git add --all' and 'git add *'
+		- Has to be a capital "A" for our command
 	7. To commit run `git commit -m "I Like Pi"`
 	8. If `Person A` did not set you as a "collaborator" on GitHub make sure you do that first
 	9. To push your changes run `git push` and use your GitHub name and password
@@ -136,15 +137,15 @@ Find a partner and give each other either `Person A` or `Person B` and follow di
 	- Don't panic, we can do this!
 	- Open up `main.c` in any text editor and you will probably see this:
 		- ![Merge Conflict](GitHub_Workshop_Image_6.png)
-	- So this is **SUPER easy**, just delete the lines you don't want and keep the ones you want
-		- The whole point of a merge conflict to let you handle cases were git can'tbm
+	- So this is **SUPER easy**, just delete the lines you don't want and keep the ones you do
+		- The whole point of a merge conflict is to let you handle cases where git can't
 	- Your new code might look like this
 		- ![Merge Conflict Fixed](GitHub_Workshop_Image_7.png)
-	- Now you fixed it just add and commit
+	- Now you've fixed it! Just add and commit
 		- `git add main.c`
 		- `git commit -m "I merged the conflict`
 		- `git push`
 
 ## YOU DID IT
 
-That wasn't that hard was it now. Feel free to play around and make random commits and test out other features while you have time to mess around and get your hands dirty.
+That wasn't that hard, was it now? Feel free to play around and make random commits. Try and test out other features while you have time to mess around and get your hands dirty.
