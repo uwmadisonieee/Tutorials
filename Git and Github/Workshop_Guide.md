@@ -104,13 +104,14 @@ Find a partner and assign one of you as `Person A` and the other as `Person B`. 
 		- FROM 
 		```
 		if (PI > 3) {
-			"I Like Pi\n"
+			printf("I Like Pi\n");
 		```
 		- TO 
 		```
 		if (PI > 2) {
-			"I LOVE PSL\n"
+			printf("I LOVE PSL\n");
 		```
+		- MAKE SURE TO CHANGE BOTH LINES
 	7. Add all these changes with `git add -A`
 		- Run `git status` to make sure you have a new file for the image and a modified `main.c` file
 	8. Now make the commit `git commit -m "super basic"`
