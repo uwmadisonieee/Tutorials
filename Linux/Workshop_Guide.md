@@ -2,12 +2,22 @@
 
 This workshop is broken into sections. Feel free to skip sections, but I would suggestion anyone new to go through them all in order
 
+- [Before You Start](#before-you-start)
+	- [Linux Users](#linux-users)
+- [Logging In](#logging-in)
+	- [Windows](#windows)
+	- [Macs](#macs)
+- [Getting Around](#getting-around)
+- [File Fun](#file-fun)
+- [Editing](#editing)
+- [Bash Scripts](#bash-scripts)
+  
 ## Before You Start
 
 * Note you don't need to know any programming to do this Linux workshop, so don't be freaked out
 * **WARNING** DO NOT copy and paste the Linux command
-	1. Its good practice to type and know the commands
-	2. sometimes the `"` and `'` in windows can be different then linux, so your commands don't work
+	1. It's good practice to type and know the commands
+	2. sometimes the `"` and `'` in windows can be different than linux, so your commands don't work
 
 #### Linux Users
 
@@ -48,7 +58,7 @@ All Engineering students can log into the CAE Linux computers with their CAE acc
 
 ## Getting Around
 
-Before we start moving around in the terminal I want you to realize that the files in the terminal are the **same** thing as the files in your file explore GUI
+Before we start moving around in the terminal I want you to realize that the files in the terminal are the **same** thing as the files in your file explorer GUI
 
 ![Files](Linux_Workshop_Image_5.png)
 
@@ -59,13 +69,13 @@ Before we start moving around in the terminal I want you to realize that the fil
 	- The `-l` flag is used to *list one file per line*
 4. Run `ls --help` to see all the other options possible
 	![ls help](Linux_Workshop_Image_7.png)
-5. Lets change folders/directories now, for this guide we will use the `Document` folder
+5. Let's now change folders/directories now, for this guide we will use the `Document` folder
 	- **NOTE:** feel free to use any folder you want, just replace the word `Document` in the follow examples
 6. To *change directory* run the command `cd Document`
-	- Note since its in the current folder we could also run `cd ./Document`
+	- Note since it's in the current folder we could also run `cd ./Document`
 7. Run both `ls` and `pwd` to see your status of that folder
 8. To go back up to the parent directory run `cd ../`
-9. Lets go all the way to the root folder with `cd /`
+9. Let's go all the way to the root folder with `cd /`
 	- Run both `ls` and `pwd` to see your status of that folder
 10. To get back run `cd ~`
 11. Play around with moving around folders with `cd`, `ls` and `pwd` and when ready move to next sections
@@ -92,11 +102,11 @@ We are going to now have fun making, copying, and deleting some files and folder
 	- The "tab complete" will check all the items in the current folder and if there is only one that fits the current letters it will just complete the rest of the word for you
 8. To make a copy of the file we need to use the `cp` command and give it a **source** to copy and a **destination** where to put it. Run `cp myFirstFile.txt copiedFile.txt`
 	- Run `ls` and `cat copiedFile.txt` to see you made a copy
-9. Lets make another subfolder called `memes` by running `mkdir memes`
+9. Let's make another subfolder called `memes` by running `mkdir memes`
 	- Run `ls -l` to see the new folder
 10. We want to move the `copiedFile.txt` into the `memes` folder. The move command `mv` works the same as the copy command. To move the file and rename it run `mv copiedFile.txt memes/movedFile.txt`
 11. Run both `ls` and `ls memes/` to see the file
-12. Type `ls m` and then hit *TAB* twice. This is what happens when "tab complete" has more then one option, it will display them all if you press *TAB* twice.
+12. Type `ls m` and than hit *TAB* twice. This is what happens when "tab complete" has more then one option, it will display them all if you press *TAB* twice.
 	- You can type the next letter of one of the option and hit *TAB* again to finish the "tab complete"
 13. To see the content you can either change directories the run `cat` or just run `cat memes/movedFile.txt`
 14. To delete the file we will run the remove command, but first:
@@ -108,4 +118,25 @@ We are going to now have fun making, copying, and deleting some files and folder
 18. Once again, to warn you of the power of delete and that to be careful to run `rm` **ESPECIALLY** if you are the root user
 	- ![root meme](Linux_Workshop_Image_9.png)
 
-## Editing 
+## Editing
+
+So I would **HIGHLY** advise learning a "real" text editor such as Vim or Emacs, but for sake of time we will use Nano for its ease and simplicity.
+
+> Nano 101
+
+- `^` means CTRL key
+- `M` means ALT key
+- ![nano](Linux_Workshop_Image_1.png)
+	- so `^X` means `CTRL + x` will *exit* the nano text editor
+
+1. Lets create a new file by running `nano listOfNames.txt`
+2. List 5-10 names all on new lines
+3. Type `^X`  ( Ctrl + x ) to exit
+4. Nano will ask to save, type `y`
+	- ![nano exit](Linux_Workshop_Image_10.png)
+5. You can change the filename to save it as, if you want to just keep it press *ENTER*
+	- ![nano save as](Linux_Workshop_Image_11.png)
+
+## Bash Scripts
+
+Bash scripts are powerful scripts that run commands for you in the Bash terminal that you most likely are using as your terminal
