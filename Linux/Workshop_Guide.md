@@ -26,7 +26,7 @@ Every linux machine will have users log in with a username and computer hostname
 - **Example:**
 	- **Username** - `pi`
 	- **Computer Hostname** - `raspberrypi`
-	- ![Username](Linux_Workshop_Image_2.png)
+	- ![Username](images/Linux_Workshop_Image_2.png)
 
 ## Logging In
 
@@ -36,7 +36,7 @@ All Engineering students can log into the CAE Linux computers with their CAE acc
 
 1. Quick [download Putty](https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe)
 2. Run the `putty.exe` file
-	- ![putty](Linux_Workshop_Image_4.png)
+	- ![putty](images/Linux_Workshop_Image_4.png)
 3. Type in the correct user and hostname
 	- **CAE Computers**: `YOURUSERNAME@best-tux.cae.wisc.edu`
 		- example: `sjfricke@best-tux.cae.wisc.edu` for the username `sjfricke`
@@ -60,15 +60,15 @@ All Engineering students can log into the CAE Linux computers with their CAE acc
 
 Before we start moving around in the terminal I want you to realize that the files in the terminal are the **same** thing as the files in your file explorer GUI
 
-![Files](Linux_Workshop_Image_5.png)
+![Files](images/Linux_Workshop_Image_5.png)
 
 1. To see what folder you are in run the command `pwd`
-	- ![pwd](Linux_Workshop_Image_6.png)
+	- ![pwd](images/Linux_Workshop_Image_6.png)
 2. To see the contents of the folder run the `ls` command
 3. Now we will add a **flag**. Try running `ls -l`
 	- The `-l` flag is used to *list one file per line*
 4. Run `ls --help` to see all the other options possible
-	![ls help](Linux_Workshop_Image_7.png)
+	![ls help](images/Linux_Workshop_Image_7.png)
 5. Let's now change folders/directories now, for this guide we will use the `Document` folder
 	- **NOTE:** feel free to use any folder you want, just replace the word `Document` in the follow examples
 6. To *change directory* run the command `cd Document`
@@ -110,13 +110,13 @@ We are going to now have fun making, copying, and deleting some files and folder
 	- You can type the next letter of one of the option and hit *TAB* again to finish the "tab complete"
 13. To see the content you can either change directories the run `cat` or just run `cat memes/movedFile.txt`
 14. To delete the file we will run the remove command, but first:
-	- ![responsibility](Linux_Workshop_Image_8.png)
+	- ![responsibility](images/Linux_Workshop_Image_8.png)
 15. First we will remove the `movedFile.txt` by running `rm memes/movedFile.txt`. If it asks you to confirm just enter `y`
 	- if you add the flag `-f` it will *force* the removing which will prevent it from asking you to confirm.
 16. To delete the folder we need to add the `-r` flag which stands for *recursive*. We also want to force delete so we want to add the flag `-f`. Instead of going `-r -f` we can combine them together by going `-rf` which will run both flags.
 17. Run `rm -rf memes/` and check to see the folder is deleted
 18. Once again, to warn you of the power of delete and that to be careful to run `rm` **ESPECIALLY** if you are the root user
-	- ![root meme](Linux_Workshop_Image_9.png)
+	- ![root meme](images/Linux_Workshop_Image_9.png)
 
 ## Editing
 
@@ -126,16 +126,16 @@ So I would **HIGHLY** advise learning a "real" text editor such as Vim or Emacs,
 
 - `^` means CTRL key
 - `M` means ALT key
-- ![nano](Linux_Workshop_Image_1.png)
+- ![nano](images/Linux_Workshop_Image_1.png)
 	- so `^X` means `CTRL + x` will *exit* the nano text editor
 
 1. Lets create a new file by running `nano listOfNames.txt`
 2. List 5-10 names all on new lines
 3. Type `^X`  ( Ctrl + x ) to exit
 4. Nano will ask to save, type `y`
-	- ![nano exit](Linux_Workshop_Image_10.png)
+	- ![nano exit](images/Linux_Workshop_Image_10.png)
 5. You can change the filename to save it as, if you want to just keep it press *ENTER*
-	- ![nano save as](Linux_Workshop_Image_11.png)
+	- ![nano save as](images/Linux_Workshop_Image_11.png)
 
 ## Bash Scripts
 
@@ -166,13 +166,13 @@ echo "I am ${age} years old" > secret.txt
 		- The `>` will write the string input the file
 		- If we use `>>` it will append the file so use that if you don't want to lose the text inside the file already.
 4. Before you can run this you need to give the file permission to run. run `ls -l` to see the current permissions.
-	- ![check permissions](Linux_Workshop_Image_12.png)
+	- ![check permissions](images/Linux_Workshop_Image_12.png)
 	- Notice the `-rw-r------` this means that the user has only **r**ead and **w**rite permissions
 5. Run `chmod u+x bashHelloWorld.sh`
 	- `chmod` is used to change file permissions
 	- `u+x` tells it to give the **u**ser e**x**ecute permissions
 6. Run `ls -l` to see that you have a `x` now which means the file can be e**x**ecuted
-	- ![check permissions](Linux_Workshop_Image_13.png)
+	- ![check permissions](images/Linux_Workshop_Image_13.png)
 7. Run the script with `./bashHelloWorld.sh`
 8. To see the file you wrote to run `cat mySecrets/secret.txt`
 9. Play around with the bash file or a new one and see what you can do!
