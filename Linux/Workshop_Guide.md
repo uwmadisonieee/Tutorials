@@ -139,4 +139,43 @@ So I would **HIGHLY** advise learning a "real" text editor such as Vim or Emacs,
 
 ## Bash Scripts
 
-Bash scripts are powerful scripts that run commands for you in the Bash terminal that you most likely are using as your terminal
+Bash scripts are powerful scripts that run commands for you in the Bash terminal that you most likely are using as your terminal. We will create a simple script 
+
+1. Create a new file with `nano bashHelloWorld.sh`
+2. Type out the bash script
+```
+#!/bin/bash
+
+age=21
+
+echo $age
+
+mkdir mySecrets
+cd mySecrets
+
+echo "I am ${age} years old" > secret.txt
+```
+3. Lets break down this file
+	- `#!/bin/bash` needs to start every bash script file. It tells bash that this is a script file to be ran
+	- `age=21` is setting the variable `age` to 21
+		- Note that `age = 21` won't work as bash will think you are running a *command* called `age`
+	- `echo $age` to use the `age` variable we need to prefix it with a `$`
+		- `echo` will just print out to the console windows
+	`mkdir mySecrets` and `cd mySecrets` just run commands as if you would have
+	`echo "I am ${age} years old" > secret.txt` takes a string that has uses the `${}` notation to inject a variable.
+		- The `>` will write the string input the file
+		- If we use `>>` it will append the file so use that if you don't want to lose the text inside the file already.
+4. Before you can run this you need to give the file permission to run. run `ls -l` to see the current permissions.
+	- ![check permissions](Linux_Workshop_Image_12.png)
+	- Notice the `-rw-r------` this means that the user has only **r**ead and **w**rite permissions
+5. Run `chmod u+x bashHelloWorld.sh`
+	- `chmod` is used to change file permissions
+	- `u+x` tells it to give the **u**ser e**x**ecute permissions
+6. Run `ls -l` to see that you have a `x` now which means the file can be e**x**ecuted
+	- ![check permissions](Linux_Workshop_Image_13.png)
+7. Run the script with `./bashHelloWorld.sh`
+8. To see the file you wrote to run `cat mySecrets/secret.txt`
+9. Play around with the bash file or a new one and see what you can do!
+
+
+
