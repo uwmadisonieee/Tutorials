@@ -153,3 +153,17 @@ Running a webserver really just means you have some code running that waits for 
 
 ## Setting up Nginx
 
+- To see if you have nginx installed already run `nginx -v`
+- If nginx is not installed run
+	- `sudo apt-get update`
+	- `sudo apt-get upgrade`
+	- `sudo apt-get install nginx`
+- To see if nginx is running run `sudo service nginx status`
+- If nginx is not on you can start it by running `sudo service nginx start`
+- If nginx is up you should go to the IP address of the server and you should see the "nginx welcome" page
+- ![nginx welcome](images/Website_Workshop_Image_9.png)
+- By default nginx sets the directory for static pages in `/var/www/html/`
+- Run `cd /var/www/html/` and if you run `ls` you will see the "nginx welcome" page
+- Nginx is set as default to look for files starting with `index` as the starting page
+- Delete the "nginx welcome" page and put your own `index.html` file in `/var/www/html/index.html`
+	- Note if you are using Vim, Emacs, Nano, etc that you run it as sudo or you will not be able to save the file you just edit
