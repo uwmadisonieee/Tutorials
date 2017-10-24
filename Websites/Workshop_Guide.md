@@ -126,7 +126,7 @@ Here is the [link to get free Azure credits](https://azure.microsoft.com/en-us/f
 
 ## Running a basic webserver
 
-Running a webserver really just means you have some code running that waits for a HTTP request and then return it the website. This section just describes deploying a basic webserver, more information about writing server side code and creating a backend can be [found here](https://calendar.google.com/calendar/render?eid=NmY0YW4zNms4NXE4bW9uZzEwNHVrcjRjcG0gdXdtYWRtYWtlckBt&ctz=America/Chicago&sf=true&output=xml)
+Running a webserver really just means you have some code running that waits for a HTTP request and then return it the website. This section just describes deploying a basic webserver, more information about writing server side code and creating a backend can be [found here](https://github.com/uwmadisonieee/Server-And-Database-Workshop)
 
 **Note:** These all explain how to do it via command line, so click [here](https://github.com/uwmadisonieee/Tutorials/tree/master/Linux) to learn to use a Linux terminal
 
