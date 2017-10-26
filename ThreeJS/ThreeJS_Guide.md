@@ -4,6 +4,7 @@ For this workshop to save time there is already a template to get up and going. 
 
 To get the template running [follow the instruction](https://github.com/uwmadisonieee/ThreeJS-Workshop-Template/blob/master/README.md). Once you get the spinning earth going, come back and start this workshop guide!
 
+
 ## Learning from tweaking
 
 > We are going to change a few parameters and explain what is happening. This will help get a better feel what all the lines of code in this template are actually doing
@@ -90,4 +91,145 @@ We are going to create a really quick and easy audio visualizer using a ThreeJS
 
 1. First go to the `index.html`
 	- Comment or remove the `<script src="javascript/main.js"></script>` line
-	- Uncomment the two lines for `library/OrbitControls.js` and `javascript/audioVisualizer.js`
+	- Uncomment the threes lines for 
+	```
+	<script src="library/OrbitControls.js"></script> 
+    <script src="javascript/audioVisualizer.js"></script>    
+    <audio id="myAudio"></audio>
+	```
+	- The `OrbitControls.js` is a helper file for the ability to click and look around the screen
+	- `audioVisualizer.js` is the new file we will be working with
+2. Open `javascript/audioVisualizer.js` in a text editor
+3. First thing is lets create a `scene` object in our `init()` function
+	- Add `scene = new THREE.Scene();` in the top of the `init()` function
+4. Next under the scene code lets add the boilerplate renderer code
+	- This is the code you use 99% of the time to setup the renderer
+	```
+	renderer = new THREE.WebGLRenderer();
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+    document.body.appendChild( renderer.domElement );
+	```
+5. Now lets add a perpective camera as we did in our other exampe
+	- The `FoV` and `position` values can always be tweaked if you want
+	```
+	camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
+    camera.position.z = 500;    
+	```
+6. To use the new `Orbit Control` library we added we need to attach it to the camera
+	- This is the last of the *boilerplate* code
+	```
+	controls = new THREE.OrbitControls( camera, renderer.domElement );
+    controls.enableZoom = false;
+	```
+7. Time to create some geometry
+	- We are going to create a BoxGeometry and set the width, hight, and depth all to the size `10`
+	- We are only creating one instance of it since we want to share it across all the boxes
+	```
+	var geometry = new THREE.BoxGeometry( 10, 10, 10 );
+	```
+8. We want to create 64 boxes that will make up our audio visualizer
+	- Frist we will need to create a for loop
+		- `for (i = 0; i < 64; i++) {}`
+	- Inside the loop we want to be able to control each color of the boxes **independently** so we create a new Material
+	- `var material = new THREE.MeshLambertMaterial( { color: 0x0000FF } );`
+		- We are using a Lambert material so we will need to add lighting to the scene later
+		- `0x0000FF` is blue
+	- Next we want to create a Mesh and add it to or `meshArray`
+		- Meshes are the actual objects you see on the screen and combine a geometry and material object
+		- `meshArray.push(new THREE.Mesh( geometry, material ));`
+	- To center the boxes and give them some room inbetween each other we set the initial position of all the boxes
+	- `meshArray[i].position.x = (i - 32) * 15;`
+		- we use `i - 32` to have half the 64 boxes on the left of origin and the other half on the right
+		- The `15` is used to give space inbetween since each box is 10 units wide 
+	- Lastly we need to add the mesh to our Scene
+		- `scene.add( meshArray[i] );`
+	- With all these steps your code should look like this
+	```
+	for (i = 0; i < 64; i++) {
+        var material = new THREE.MeshLambertMaterial( { color: 0x0000FF } );
+        meshArray.push(new THREE.Mesh( geometry, material ));
+        meshArray[i].position.x = (i - 32) * 15;
+        scene.add( meshArray[i] );
+    }
+	```
+9. We will be adding two sets of light
+	- First we add a directional light that will be white (0xffffff)
+		- `var dirLight = new THREE.DirectionalLight( 0xffffff );`
+	- Directional lights default aim towards the origin so we will set it so it shines down from the corner angle
+		- `dirLight.position.set( 1, 1, 1 );`
+	- Time to add to scene
+		- `scene.add( dirLight );`
+	- We will want so filler light otherwise anything behind the directional light will not been seen
+		- `var AmbLight = new THREE.AmbientLight( 0x222222 );`
+		- This gives a light grey color light to anything behind the direction light line of sight
+	- Don't forget to add to the scene
+		- `scene.add( AmbLight );`
+	- With all these steps your code should look like this
+	```
+	var dirLight = new THREE.DirectionalLight( 0xffffff );
+    dirLight.position.set( 1, 1, 1 );
+    scene.add( dirLight );
+
+    var AmbLight = new THREE.AmbientLight( 0x222222 );
+    scene.add( AmbLight );
+	```
+10. We need to add what to do on a change of window size so next lets add a event listener
+	- `window.addEventListener( 'resize', onWindowResize, false );`
+11. We now need to add code to the `onWindowResize` given in the event listener
+	- This is a boilerplate code for most applications
+	```
+	function onWindowResize() {
+
+	    camera.aspect = window.innerWidth / window.innerHeight;
+	    camera.updateProjectionMatrix();
+
+	    renderer.setSize( window.innerWidth, window.innerHeight );
+	}
+	```
+12. Going back to `init()` function at the bottom lets make two big calls now that everything is setup
+	- First we will call `setupAudio();` which for this workshop is just going to start our audio sample and have the data writtne to the variable `frequencyData`
+	- Next we need to finally call `animate();` and start the animation cycle
+	- These are the last two calls we will make in our `init()` function
+13. The animation function needs to do 4 things
+	1. request the next frame
+	2. change our boxes
+	3. update the orbital control camera
+	4. render it all to the screen
+14. Inside our `animate()` function the first thing to add is `requestAnimationFrame( animate );`
+	- This is the special function call to loop the `animate()` function after each frame
+15. We now are going to update the boxes to match the audio at that frame
+	- The first thing we need to do is call `analyser.getByteFrequencyData(frequencyData);`
+		- This will set `frequencyData` to an array that has the intensity of 64 different sections for use between 0-255
+	- We now need to create a loop to alter each of the boxes
+		- `for (i = 0; i < 64; i++) {}`
+	- We will adjust the scale of the y axis of each box
+		- `meshArray[i].scale.y = Math.max(1, frequencyData[i]) / 10;`
+			- We use `Math.max()` because we want 1 to be our base scale level
+	- Next to adjust the color we will set the red and green value between 0 and 1 depending on how intense the value is
+		```
+		meshArray[i].material.color.r = frequencyData[i] / 255;
+        meshArray[i].material.color.g = frequencyData[i] / 255;
+		```
+16. To update the orbital control on the camera we just need to call `controls.update();`
+17. To render we just need to call `render()` and we are set to go
+18. You should be able to see your audio visualizer in action now
+	- To verify your code here is what the `animate()` function should look like
+	```
+	function animate() {
+
+	    requestAnimationFrame( animate );
+	    
+	    analyser.getByteFrequencyData(frequencyData);
+	    for (i = 0; i < 64; i++) {
+	        meshArray[i].scale.y = Math.max(1, frequencyData[i]) / 10;
+	        meshArray[i].material.color.r = frequencyData[i] / 255;
+	        meshArray[i].material.color.g = frequencyData[i] / 255;
+	    }
+
+	    controls.update();
+
+	    render();
+	}
+	```	
