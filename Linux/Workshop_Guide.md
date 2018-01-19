@@ -80,6 +80,31 @@ Before we start moving around in the terminal I want you to realize that the fil
 10. To get back run `cd ~`
 11. Play around with moving around folders with `cd`, `ls` and `pwd` and when ready move to next sections
 
+## Tab completing
+
+I added this sections because the longer you don't use it, the more of your life you will waste, so start now!
+
+1. Create a new foler and go into it
+	- `mkdir tab`
+	- `cd tab`
+2. Create 4 blank files. Note to use the up arrow to get the last command you typed in.
+	- `touch aFile.txt` 
+	- `touch aFileAgain.txt` 
+	- `touch aFileBouiiiii.txt` 
+	- `touch notLikeTheOthers.txt` 
+3. Make sure the files are there with `ls`	
+	![tab filse](images/Linux_Workshop_Image_14.png)
+4. Start typing `cat n` and from here we can do a **TAB COMPLETE** by pressing the *tab* key.
+	- The idea behind this is of all the options in the folder only 1 starts with "n" therefore it is smart enough to finish the file for you!
+		- You can run the command, it just shows the file is empty inside
+![tab complete](images/Linux_Workshop_gif_1.gif)
+5. Start typing `cat a` and hit *tab*... it should have got to `aFile`.
+6. Try hitting *tab* with it at `cat aFile`... nothing happen? Try double tapping *tab*
+	- It will show you all the current options.
+7. Add the next character to one of the three options and hit tab again and watch it tab complete
+![tab complete](images/Linux_Workshop_gif_2.gif)
+8. Learn to use this... there is no time in life to waste typing out the entire name of things.
+
 ## File Fun
 
 We are going to now have fun making, copying, and deleting some files and folders. Note that not all folders will have permissions for you to read, write, or delete files.
@@ -97,9 +122,6 @@ We are going to now have fun making, copying, and deleting some files and folder
 	- `>>` is used to append to a file
 	- This command printed text and instead of echoing it back we wrote it into the file
 7. To see the content of your file you can use the `cat` command to display the contents of a file. Run `cat myFirstFile.txt`
-	- **BIG NOTE:** you should be using "tab complete"
-	- Type `cat my` and then press the *TAB* key
-	- The "tab complete" will check all the items in the current folder and if there is only one that fits the current letters it will just complete the rest of the word for you
 8. To make a copy of the file we need to use the `cp` command and give it a **source** to copy and a **destination** where to put it. Run `cp myFirstFile.txt copiedFile.txt`
 	- Run `ls` and `cat copiedFile.txt` to see you made a copy
 9. Let's make another subfolder called `memes` by running `mkdir memes`
@@ -137,9 +159,15 @@ So I would **HIGHLY** advise learning a "real" text editor such as Vim or Emacs,
 5. You can change the filename to save it as, if you want to just keep it press *ENTER*
 	- ![nano save as](images/Linux_Workshop_Image_11.png)
 
+Now that we created the file we can use the `cat` command to view the content of the files.
+
+- Type `cat listOfNames.txt` to see your names
+- Type `head -2 listOfNames.txt` to see the first **two** lines in the file.
+- Type `tail -3 listOfNames.txt` to see the last **three** lines in the file.
+
 ## Bash Scripts
 
-Bash scripts are powerful scripts that run commands for you in the Bash terminal that you most likely are using as your terminal. We will create a simple script 
+Bash scripts are powerful scripts that run commands for you in the Bash terminal that you most likely are using as your terminal. We will create a simple script.
 
 1. Create a new file with `nano bashHelloWorld.sh`
 2. Type out the bash script
