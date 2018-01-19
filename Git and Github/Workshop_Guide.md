@@ -44,13 +44,13 @@ Find a partner and assign one of you as `Person A` and the other as `Person B`. 
 		- `git push -u origin master`
 	6. Go to GitHub and refresh page and see everything is there from your commit
 	7. Now to allow `Person B` to push changes you need set them a `Collaborator` on GitHub
-		- 1. ![Where Settings is](GitHub_Workshop_Image_1.png)
-		- 2. ![Where Collaborator is](GitHub_Workshop_Image_2.png)
+		- 1. ![Where Settings is](images/GitHub_Workshop_Image_1.png)
+		- 2. ![Where Collaborator is](images/GitHub_Workshop_Image_2.png)
 		- 3. Add the usernames of partner
 4. [**Person B**]
 	1. You will need to check email and accept invite to private repo
 	2. We need to clone a repo `git clone <THEIR_REPO_URL>`
-		- ![Where Clone is](GitHub_Workshop_Image_3.png)
+		- ![Where Clone is](images/GitHub_Workshop_Image_3.png)
 	3. Open the repo folder (`cd` into it) in your terminal and run `git log`
 		- You should see the commit message
 	4. Make a **new** file in the repo folder called `main.h` and add this to it:
@@ -122,7 +122,7 @@ Find a partner and assign one of you as `Person A` and the other as `Person B`. 
 8. [**Person B**] Switch back to the Master branch `git checkout master`
 	1. Pull down the memes changes from before with `git pull`
 	2. You can also examine the branches on GitHub
-		- ![Where Branch is](GitHub_Workshop_Image_4.png)
+		- ![Where Branch is](images/GitHub_Workshop_Image_4.png)
 9. [**Person A** and **Person B**] Look at your file explore and the `main.c` file
 	- Try switching between branches and note how it changes your folders and files for you
 	- `git checkout pi` and `git checkout master`
@@ -134,14 +134,14 @@ Find a partner and assign one of you as `Person A` and the other as `Person B`. 
 		- If a text editor comes ou you can just exit out
 			- If Vim or Vi run `:q`
 			- If Nano run `Ctrl + x`
-	- ![Merge Conflict](GitHub_Workshop_Image_5.png)
+	- ![Merge Conflict](images/GitHub_Workshop_Image_5.png)
 	- Don't panic, we can do this!
 	- Open up `main.c` in any text editor and you will probably see this:
-		- ![Merge Conflict](GitHub_Workshop_Image_6.png)
+		- ![Merge Conflict](images/GitHub_Workshop_Image_6.png)
 	- So this is **SUPER easy**, just delete the lines you don't want and keep the ones you do
 		- The whole point of a merge conflict is to let you handle cases where git can't
 	- Your new code might look like this
-		- ![Merge Conflict Fixed](GitHub_Workshop_Image_7.png)
+		- ![Merge Conflict Fixed](images/GitHub_Workshop_Image_7.png)
 	- Now you've fixed it! Just add and commit
 		- `git add main.c`
 		- `git commit -m "I merged the conflict`
