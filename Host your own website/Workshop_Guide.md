@@ -134,10 +134,13 @@ Running a webserver really just means you have some code running that waits for 
 
 - Open terminal and get to directory of website
 - Make sure you have node by running `python --version`
-- Run `python -m SimpleHTTPServer`
-	- it will defaut at port 8000
-- To change to a different port, for instance, port 9001
-	- run `python -m SimpleHTTPServer 9001`
+- Python 2
+	- Run `python -m SimpleHTTPServer`
+		- it will defaut at port 8000
+	- To change to a different port, for instance, port 9001
+		- run `python -m SimpleHTTPServer 9001`
+- Python 3
+	- Run `python -m http.server`
 
 ### NodeJS
 
