@@ -89,8 +89,20 @@ Find a partner and assign one of you as `Person A` and the other as `Person B`. 
 		- You can run `mkdir memes`
 	4. Find and save a jpeg or png of a meme in this folder
 		- Need help? Here is a [link to help](https://www.google.com/search?rlz=1C1CHWA_enUS611US611&biw=946&bih=1109&tbm=isch&sa=1&q=most+popular+memes&oq=most+po&gs_l=psy-ab.3.0.0i67k1j0l3.17507.18194.0.19218.7.7.0.0.0.0.192.844.3j4.7.0....0...1.1.64.psy-ab..0.7.842....0.RmnvWe6UAi4)
-	5. Add the folder to be commited `git add memes/`
-		- If you are in the folder you can just do `git add ./` or even `git add -A`
+	5. Now change the two lines in `main.c`
+		- FROM 
+		```
+		if (PI > 3) {
+			printf("I Like Pi\n");
+		```
+		- TO 
+		```
+		if (PI > 4) {
+			printf("I LOVE MEMES\n");
+		```
+		- MAKE SURE TO CHANGE BOTH LINES
+	5. Add the folder to be commited `git add memes/` and also the changes in `main.c` with `git add main.c`
+		- Or just run `git add -A` to add everything
 	6. Make your commit `git commit -m "memes for days"`
 	7. Make a push with `git push`
 6. [**Person B**] **DO NOT PULL THE NEW MEME FOLDER COMMIT**... not yet
@@ -116,7 +128,8 @@ Find a partner and assign one of you as `Person A` and the other as `Person B`. 
 		- Run `git status` to make sure you have a new file for the image and a modified `main.c` file
 	8. Now make the commit `git commit -m "super basic"`
 	9. Push changes with `git push --set-upstream origin pi`
-		- This is telling it to push the `pi` branch to our `origin` remote server which is the GitHub repo
+		- This is telling it to push the `pi` branch to our `origin` remote server which is the GitHub repo		
+		- We use `--set-upstream` when adding a new branch to a git remote server that has never seen before
 7. [**Person A**] Pull in the new branch from `Person B` running `git pull`
 	1. Make sure you are **out** of the meme folder (run `cd ..`) and run `git branch` to see the other branch
 8. [**Person B**] Switch back to the Master branch `git checkout master`
