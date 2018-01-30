@@ -188,10 +188,10 @@ echo "I am ${age} years old" > secret.txt
 	- `age=21` is setting the variable `age` to 21
 		- Note that `age = 21` won't work as bash will think you are running a *command* called `age`
 	- `echo $age` to use the `age` variable we need to prefix it with a `$`
-		- `echo` will just print out to the console windows
-	`mkdir mySecrets` and `cd mySecrets` just run commands as if you would have
-	`echo "I am ${age} years old" > secret.txt` takes a string that has uses the `${}` notation to inject a variable.
-		- The `>` will write the string input the file
+		- `echo` will just print out to the console windows.
+	`mkdir mySecrets` and `cd mySecrets` just run commands as if you would have typed them into the console.
+	`echo "I am ${age} years old" > secret.txt` takes a string that uses the `${}` notation to inject a variable.
+		- The `>` will write the string input to the file
 		- If we use `>>` it will append the file so use that if you don't want to lose the text inside the file already.
 4. Before you can run this you need to give the file permission to run. run `ls -l` to see the current permissions.
 	- ![check permissions](images/Linux_Workshop_Image_12.png)
