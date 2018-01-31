@@ -69,10 +69,10 @@ Before we start moving around in the terminal I want you to realize that the fil
 	- The `-l` flag is used to *list one file per line*
 4. Run `ls --help` to see all the other options possible
 	![ls help](images/Linux_Workshop_Image_7.png)
-5. Let's now change folders/directories now, for this guide we will use the `Document` folder
-	- **NOTE:** feel free to use any folder you want, just replace the word `Document` in the follow examples
-6. To *change directory* run the command `cd Document`
-	- Note since it's in the current folder we could also run `cd ./Document`
+5. Let's now change folders/directories now, for this guide we will use the `Documents` folder
+	- **NOTE:** feel free to use any folder you want, just replace the word `Documents` in the follow examples
+6. To *change directory* run the command `cd Documents`
+	- Note since it's in the current folder we could also run `cd ./Documents`
 7. Run both `ls` and `pwd` to see your status of that folder
 8. To go back up to the parent directory run `cd ../`
 9. Let's go all the way to the root folder with `cd /`
