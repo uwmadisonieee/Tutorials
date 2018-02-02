@@ -44,7 +44,7 @@ Most domains are cheap for at least one year and then the renewal cost can go up
 
 ### Namecheap
 
-[Namecheap](https://nc.me/) gives free domain for a year
+[Namecheap](https://nc.me/) gives free domain for a year as a student
 
 ### Domain.com
 
