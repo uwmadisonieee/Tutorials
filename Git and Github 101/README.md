@@ -1,7 +1,8 @@
 # Git and GitHub 101 Workshop
 
+- [Click here](Workshop_Guide.md) for the workshop practice section material
+
 - [Presentation Slides](https://drive.google.com/open?id=16JmCSGlRw94gMwygp5IMnH_TUITYGqG73y1g5yOcroI)
-- [Pratice Guide/Directions](Workshop_Guide.md)
 
 # Great Resources
 - [Git Cheat Sheet](Git%20Cheat%20Sheet.pdf)

@@ -8,8 +8,12 @@ Please help improve these workshops by creating an [issue](https://github.com/uw
 
 ## Current Workshops
 
-- [Git and GitHub](https://github.com/uwmadisonieee/Tutorials/blob/master/Git%20and%20Github/Workshop_Guide.md)
-- [Linux](https://github.com/uwmadisonieee/Tutorials/blob/master/Linux/Workshop_Guide.md)
-- [Websites](https://github.com/uwmadisonieee/Tutorials/blob/master/Websites/Workshop_Guide.md)
-- [Server and Databases](https://github.com/uwmadisonieee/Server-And-Database-Workshop)
-- [ThreeJS](https://github.com/uwmadisonieee/Tutorials/blob/master/ThreeJS/ThreeJS_Guide.md)
+- [Git and GitHub 101](Git%20and%20Github%20101)
+- [Linux 101](Linux%20101)
+- [Host your own website](Host%20your%20own%20website)
+- [Intro to servers and backend](Intro%20to%20servers%20and%20backend)
+- [Databases 101](Databases%20101)
+
+## Want more?
+
+Checkout [Lynda](Lynda)
