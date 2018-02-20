@@ -220,7 +220,7 @@ We are going to create a really quick and easy audio visualizer using a ThreeJS
 	function animate() {
 
 	    requestAnimationFrame( animate );
-	    
+
 	    analyser.getByteFrequencyData(frequencyData);
 	    for (i = 0; i < 64; i++) {
 	        meshArray[i].scale.y = Math.max(1, frequencyData[i]) / 10;
@@ -232,4 +232,9 @@ We are going to create a really quick and easy audio visualizer using a ThreeJS
 
 	    render();
 	}
-	```	
+	```
+## Finished Code
+
+In case you got stuck or just want to try it yourself, the Audio Visualizer code is found [here](https://github.com/uwmadisonieee/ThreeJS-Workshop-Template/blob/finished/javascript/audioVisualizer.js)
+
+Don't forget to change your [index.html](https://github.com/uwmadisonieee/ThreeJS-Workshop-Template/blob/finished/index.html) code as well
