@@ -2,4 +2,4 @@
 
 - [Click here](Workshop_Guide.md) for the workshop practice section material
 
-- [Presentation Slides](https://docs.google.com/presentation/d/1fW5NA1vAkXNegCpFBQxsfH9MBtyve6_LbOW4Ppx1FPw/edit?usp=sharing)
+- [Presentation Slides](https://drive.google.com/open?id=1fW5NA1vAkXNegCpFBQxsfH9MBtyve6_LbOW4Ppx1FPw)
