@@ -2,9 +2,13 @@
 
 Here is a repo to hold all presentations slides, code, etc from the various workshops held by UW-Madison IEEE Student Organization.
 
-## Issues or fixes
+## Issues, fixes, or spelling error?
 
-Please help improve these workshops by creating an [issue](https://github.com/uwmadisonieee/Tutorials/issues) if you find anything wrong or feel something is not well explained
+Please help improve these workshops by creating an [issue](https://github.com/uwmadisonieee/Tutorials/issues) if you find anything wrong or feel something is not well explained. Pull request are welcome as well!
+
+### Need a Linux computer to work on?
+
+- [Free School Linux Machines](School%20Linux%20Machines)
 
 ## Current Workshops
 
@@ -20,4 +24,4 @@ Please help improve these workshops by creating an [issue](https://github.com/uw
 
 ## Want more?
 
-Checkout [Lynda](Lynda)
+Checkout [Lynda](Lynda) for millions of hours of amazing videos UW-Madison is paying for.
