@@ -124,7 +124,15 @@ Time: 479 millisecons.
 
 OpenCL is a great tool to exploit more massive parallelism while still being able to work on many device.
 
+- Run [info.c](examples/info.c) with `gcc info.c -lOpenCL -o info`
+    - This will show GPU info
+
+- Run [helloCL.c](examples/helloCL.c) with `gcc helloCL.c -lOpenCL -o helloCL`
+    - This will double a vector
+
 ## CUDA
 
 **Currently looking into how to get demo to work on school machines**
+
+
 
