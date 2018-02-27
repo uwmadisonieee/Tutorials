@@ -100,7 +100,7 @@ The idea of this program is showing that something like `2 * i` is not a CPU int
 ### Example of OpenMP being useful
 
 - Lets say you want to accuratly calculate Pi and decide to use the [Monte Carlo](http://mathfaculty.fullerton.edu/mathews/n2003/montecarlopimod.html) method. Open a file called `monteCarlo.cpp` and copy [this code](examples/monteCarlo.cpp) into it.
-  - Can also run `wget https://raw.githubusercontent.com/uwmadisonieee/Tutorials/master/GPGPU%20and%20Compute/examples/montoCarlo.cpp` if on machine
+  - Can also run `wget https://raw.githubusercontent.com/uwmadisonieee/Tutorials/master/GPGPU%20and%20Compute/examples/monteCarlo.cpp` if on machine
 - Now compile it with `g++ -fopenmp -std=c++11 monteCarlo.cpp -o monteCarlo`
 - You should get a result such as
 
