@@ -2,6 +2,8 @@
 
 ## What you need
 - [Android Studio](https://developer.android.com/studio/index.html)
+- An Android mobile device
+- A USB cable to connect your Android device to your computer
 
 ## Getting Started
 1. Open Android Studio on computer
