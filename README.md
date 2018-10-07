@@ -14,14 +14,14 @@ Please help improve these workshops by creating an [issue](https://github.com/uw
 
 - [Android 101](Android%20101)
 - [Databases 101](Databases%20101)
-- [Git and GitHub 101](Git%20and%20Github%20101)
 - [GPGPU and Compute](GPGPU%20and%20Compute)
+- [Git and GitHub 101](Git%20and%20Github%20101)
 - [Graphics and WebGL 101](Graphics%20and%20WebGL%20101)
 - [Host your own website](Host%20your%20own%20website)
 - [Intro to servers and backend](Intro%20to%20servers%20and%20backend)
 - [Linux 101](Linux%20101)
+- [Raspberry Pi and Home IoT](Raspberry%20Pi%20Home%20IoT)
 - [Raspberry Pi and Embedded Systems](Raspberry%20Pi%20and%20Embedded%20Systems)
-- [Raspberry Pi and Home IoT](Raspberry%20Pi%20and%20Home%20IoT)
 - [Unity 101](Unity%20101)
 
 
